@@ -13,19 +13,8 @@ public class EncryptDecryptRSAController {
   @Autowired
   EncryptDecryptService encryptDecryptService;
 
-  @GetMapping("/createKeys")
-  public void createPrivatePublickey() {
-    encryptDecryptService.createKeys();
-  }
-
   @PostMapping("/encrpyt")
   public String encryptMessage(@RequestBody String plainString) {
     return encryptDecryptService.encryptMessage(plainString);
-  }
-
-
-  @PostMapping("/decrpyt")
-  public String decryptMessage(@RequestBody String encryptString) {
-    return encryptDecryptService.decryptMessage(encryptString);
   }
 }
