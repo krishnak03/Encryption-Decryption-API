@@ -11,10 +11,19 @@ import org.springframework.web.bind.annotation.RestController;
 public class EncryptDecryptRSAController {
 
   @Autowired
-  EncryptDecryptService encryptDecryptService;
+  final EncryptDecryptService encryptDecryptService;
 
-  @PostMapping("/encrpyt")
-  public String encryptMessage(@RequestBody String plainString) {
-    return encryptDecryptService.encryptMessage(plainString);
+  public EncryptDecryptRSAController(EncryptDecryptService encryptDecryptService) {
+    this.encryptDecryptService = encryptDecryptService;
+  }
+
+  @PostMapping("/StringToKey")
+  public void convertToKey(@RequestBody String privateKeyString){
+    encryptDecryptService.initFromStrings(privateKeyString);
+  }
+
+  @PostMapping("/decrypt")
+  public String decryptMessage(@RequestBody String encryptString) {
+    return encryptDecryptService.decryptMessage(encryptString);
   }
 }
