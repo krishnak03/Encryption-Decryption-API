@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "51cddce3-9a38-4c9c-9cc6-2d7186b54140",
+		"name": "Encryption-decryption",
+		"description": "Collection for Encryption and Decryption API's both Together and Standalone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34830787"
+	},
+	"item": [
+		{
+			"name": "createKeys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCAL}}createKeys",
+					"host": [
+						"{{LOCAL}}createKeys"
+					]
+				},
+				"description": "Used when creating both keys and doing encryption decryption together -- main branch"
+			},
+			"response": []
+		},
+		{
+			"name": "Encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "krishna",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCAL}}encrpyt",
+					"host": [
+						"{{LOCAL}}encrpyt"
+					]
+				},
+				"description": "Can be used as standalone -- Create keys called internally and public key gets mapped at same time , Private key to be taken from console which is to be used to convert it to real key using stringtokeys"
+			},
+			"response": []
+		},
+		{
+			"name": "Decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "RYfxZLAhVCxTft9xt1JZlITJ2RQsBaJE8Ycf7BFjKHdEXP8cN3naqXfJoTxWUzZz7l4R52X5vwGtop3FuvwpUcxOLlqOeDCzAi2/yYejnlVUKpcJ+i6QTwUDoUdtpJHeffVo4ybVPC/VNfEMgWyRpO8x6TFUiPrOvGqZknLSPfpGYtNWHBdTv70QPnN5JjzxgJ4D9fSNthWXHhSSHzhzPuL0kraXvdrvj0Nfnta32eh7YAamzSrQf+ovhHhfydFmHGwbgOxU79uuii8zFAnRsqZii5zx6QPrSbDFhAn5MyfjJvYXypkP1gb1Xs21Pmp7L5M7EMvglBCJ/+IX8Qp4MGm+huQ8O6Y2PYk3R1rTZYfCdM2O5V8SGy7rincPcgJ4H8eii6u56lLkWpIFQ3Vo560woRP3BkB4y63eu5e2eJz6lPZveR1bKYdazmjyEk4J/RcJ4gyhHoZsPdDXXJ8D+2Gd3noe7LVGp5511iGiSC/4u9MByipqFOsmD7q05EOigGPlR/YgsYjgItKVHYMiNquWzJCYmj5fcTX/YgKEt2oLVkhzBmcHHpV5XiafT5p5NB7Xw0nKus5Bhne5cGxAOvoJjliqpjpdX6dycThqAXS2ya5mEZEWjIjjlzdmIbknZe3U8LrtHKO4aSod/qlPNP7AWwsye0qnoZo6xV1ZytU=",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCAL}}/decrypt",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"decrypt"
+					]
+				},
+				"description": "once string to keys is called and sting private encoded key is decoded to normal rsa key the key is then mapped to this api and when private key is pasted here and run -- decryption happens"
+			},
+			"response": []
+		},
+		{
+			"name": "StringtoKeys",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "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",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCAL}}/StringToKey",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"StringToKey"
+					]
+				},
+				"description": "Encoded private key is passsed in request and converted key gets mapped to decrypt automatically."
+			},
+			"response": []
+		}
+	]
+}
